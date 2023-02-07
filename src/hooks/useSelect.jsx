@@ -1,14 +1,21 @@
 import { useState } from 'react'
 
 function useSelect (stateInicial, opciones) {
-  const [state, actualizarState] = useState('')
+  const [state, actualizarState] = useState(stateInicial)
 
   const SelectNoticias = () => {
     return (
       <select
         className='browser-default'
+        onChange={e => actualizarState(e.target.value)}
       >
-        <option value=''>Seleccione</option>
+        {opciones.map(opcion => {
+          return (
+            <option value={opcion.value} key={opcion.value}>
+              {opcion.label}
+            </option>
+          )
+        })}
       </select>
     )
   }
