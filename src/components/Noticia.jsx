@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 function Noticia ({ noticia }) {
   const { urlToImage, url, title, description, source } = noticia
   const imagen = (urlToImage)
@@ -29,5 +30,7 @@ function Noticia ({ noticia }) {
     </div>
   )
 }
-
+Noticia.propTypes = {
+  noticia: PropTypes.object.isRequired
+}
 export default Noticia

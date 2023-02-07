@@ -1,4 +1,5 @@
 import Noticia from './Noticia'
+import PropTypes from 'prop-types'
 
 function ListadoNoticias ({ noticias }) {
   return (
@@ -15,4 +16,7 @@ function ListadoNoticias ({ noticias }) {
   )
 }
 
+ListadoNoticias.propTypes = {
+  noticias: PropTypes.array.isRequired
+}
 export default ListadoNoticias

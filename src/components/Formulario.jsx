@@ -1,5 +1,6 @@
 import styles from '../stylesheets/Formulario.module.css'
 import useSelect from '../hooks/useSelect'
+import PropTypes from 'prop-types'
 
 function Formulario ({ guardarCategoria }) {
   const OPCIONES = [
@@ -35,6 +36,10 @@ function Formulario ({ guardarCategoria }) {
       </div>
     </section>
   )
+}
+
+Formulario.propTypes = {
+  guardarCategoria: PropTypes.func.isRequired
 }
 
 export default Formulario
